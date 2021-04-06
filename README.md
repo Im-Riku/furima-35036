@@ -19,17 +19,17 @@
 - has_many  :purchases
 
 ## itemsテーブル
-| Column          | Type          | Options                        |
-| --------------- | ------------- | ------------------------------ |
-| item_name       | text          | null: false                    |
-| explanation     | text          | null: false                    |
-| category        | text          | null: false                    |
-| condition       | text          | null: false                    |
-| delivery_fee    | text          | null: false                    |
-| delivery_source | text          | null: false                    |
-| days_to_ship    | text          | null: false                    |
-| price           | text          | null: false                    |
-| user            | refrences     | null: false, foreign_key: true |
+| Column             | Type          | Options                        |
+| ------------------ | ------------- | ------------------------------ |
+| item_name          | string        | null: false                    |
+| explanation        | text          | null: false                    |
+| category_id        | integer       | null: false                    |
+| condition_id       | integer       | null: false                    |
+| delivery_fee_id    | integer       | null: false                    |
+| delivery_source_id | integer       | null: false                    |
+| days_to_ship_id    | integer       | null: false                    |
+| price              | integer       | null: false                    |
+| user               | refrences     | null: false, foreign_key: true |
 
 ### Association
 
@@ -52,13 +52,12 @@
 ## purchasesテーブル
 | Column         | Type      | Options                        |
 | -------------- | --------- | ------------------------------ |
-| card_number    | text      | null: false                    |
-| expiation_date | text      | null: false                    |
-| security_code  | text      | null: false                    |
 | item           | refrences | null: false, foreign_key: true |
+| user           | refrences | null: false, foreign_key: true |
 
 ### Association
 
+- belongs_to  :user
 - belongs_to  :item
 - has_one     :addresse
 
