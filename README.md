@@ -29,7 +29,7 @@
 | delivery_source_id | integer       | null: false                    |
 | days_to_ship_id    | integer       | null: false                    |
 | price              | integer       | null: false                    |
-| user               | refrences     | null: false, foreign_key: true |
+| user               | references    | null: false, foreign_key: true |
 
 ### Association
 
@@ -38,11 +38,11 @@
 - has_one     :purchase
 
 ## commentsテーブル
-| Column      | Type      | Options                        |
-| ----------- | --------- | ------------------------------ |
-| text        | text      |                                |
-| user        | refrences | null: false, foreign_key: true |
-| item        | refrences | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| text        | text       |                                |
+| user        | references | null: false, foreign_key: true |
+| item        | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -50,10 +50,10 @@
 - belongs_to  :item
 
 ## purchasesテーブル
-| Column         | Type      | Options                        |
-| -------------- | --------- | ------------------------------ |
-| item           | refrences | null: false, foreign_key: true |
-| user           | refrences | null: false, foreign_key: true |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| item           | references | null: false, foreign_key: true |
+| user           | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -70,7 +70,7 @@
 | buyer_address   | string        | null: false                    |
 | building_name   | string        |                                |
 | phone_number    | string        | null: false                    |
-| purchase        | refrences     | null: false, foreign_key: true |
+| purchase        | references    | null: false, foreign_key: true |
 
 ### Association
 
