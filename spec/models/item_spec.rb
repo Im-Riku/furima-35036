@@ -46,31 +46,31 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Explanation can't be blank")
       end
 
-      it 'category_idが空では出品できない' do
+      it 'category_idに1が選択されている場合は出品できない' do
         @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
 
-      it 'condition_idが空では出品できない' do
+      it 'condition_idに1が選択されている場合は出品できない' do
         @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition must be other than 1")
       end
 
-      it 'delivery_fee_idがからでは出品できない' do
+      it 'delivery_fee_idに1が選択されている場合は出品できない' do
         @item.delivery_fee_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
       end
 
-      it 'delivery_sourceが空では出品できない' do
+      it 'delivery_sourceに1が選択されている場合は出品できない' do
         @item.delivery_source_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery source must be other than 1")
       end
 
-      it 'days_to_ship_idが空では出品できない' do
+      it 'days_to_ship_idに1が選択されている場合は出品できない' do
         @item.days_to_ship_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Days to ship must be other than 1")
