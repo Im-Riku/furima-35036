@@ -17,7 +17,9 @@ class Item < ApplicationRecord
     validates :delivery_fee_id, numericality: { other_than: 1 }
     validates :delivery_source_id, numericality: { other_than: 1 }
     validates :days_to_ship_id, numericality: { other_than: 1 }
-    validates :price
+    validates :price, numericality: {greater_than: 299, less_than: 10000000}, format: { with: /\A[0-9]+\z/}
     validates :image
   end
+
+
 end
