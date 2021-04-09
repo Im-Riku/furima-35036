@@ -47,33 +47,33 @@ RSpec.describe Item, type: :model do
       end
 
       it 'category_idが空では出品できない' do
-        @item.category_id = nil
+        @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category is not a number")
+        expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
 
       it 'condition_idが空では出品できない' do
-        @item.condition_id = nil
+        @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition is not a number")
+        expect(@item.errors.full_messages).to include("Condition must be other than 1")
       end
 
       it 'delivery_fee_idがからでは出品できない' do
-        @item.delivery_fee_id = nil
+        @item.delivery_fee_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery fee is not a number")
+        expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
       end
 
       it 'delivery_sourceが空では出品できない' do
-        @item.delivery_source_id = nil
+        @item.delivery_source_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery source is not a number")
+        expect(@item.errors.full_messages).to include("Delivery source must be other than 1")
       end
 
       it 'days_to_ship_idが空では出品できない' do
-        @item.days_to_ship_id = nil
+        @item.days_to_ship_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Days to ship is not a number")
+        expect(@item.errors.full_messages).to include("Days to ship must be other than 1")
       end
 
       it 'priceが空では出品できない' do
