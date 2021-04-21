@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      redirect_to root_path
     else
       render "items/new"
     end
@@ -23,6 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if @item.order.present?
+      redirect_to root_path
+    end
   end
 
   def update
@@ -56,4 +60,5 @@ class ItemsController < ApplicationController
       redirect_to root_path
     end
   end
+
 end
